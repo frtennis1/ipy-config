@@ -11,4 +11,4 @@ if not os.path.isdir(startup_dir):
 
 downloader_url = 'https://raw.githubusercontent.com/frtennis1/ipy-config/master/downloader.py'
 
-urlretrieve(downloader_url, filename=os.path.join(startup_dir, '000-downloader.py'))
+urlretrieve(downloader_url, filename=os.path.join(startup_dir, '000-azure-conf.py'))
