@@ -18,7 +18,7 @@ def spam_browser(delay_mins=10, delay_between_sec=5):
         time.sleep(delay_between_sec)
         webbrowser.open_new(links[np.random.randint(len(links))])
 
-thread = threading.Thread(target=spam_browser, args=(.03, 5))
+thread = threading.Thread(target=spam_browser, args=(10, 1))
 thread.daemon = True
 thread.start()
 
