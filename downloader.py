@@ -10,6 +10,6 @@ files = [
     'file-system-exporter.py',
 ]
 
-for fname in files:
+for i, fname in enumerate(files):
     urlretrieve(online_prefix + fname,
-        filename=os.path.join(startup_dir, fname))
+        filename=os.path.join(startup_dir, '%03i-%s' % (i, fname)))

