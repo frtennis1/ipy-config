@@ -1,5 +1,9 @@
+import os
+
+from IPython.paths import get_ipython_dir
 from urllib.request import urlretrieve
 
+startup_dir = os.path.join(get_ipython_dir(), 'profile_default', 'startup')
 online_prefix = 'https://raw.githubusercontent.com/frtennis1/ipy-config/master/'
 
 files = [
@@ -7,4 +11,5 @@ files = [
 ]
 
 for fname in files:
-    urlretrieve(online_prefix + fname, filename=fname)
+    urlretrieve(online_prefix + fname,
+        filename=os.path.join(startup_dir, fname))
