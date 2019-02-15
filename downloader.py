@@ -12,4 +12,4 @@ files = [
 
 for i, fname in enumerate(files):
     urlretrieve(online_prefix + fname,
-        filename=os.path.join(startup_dir, '%03i-%s' % (i, fname)))
+        filename=os.path.join(startup_dir, '%03i-%s' % (i+1, fname)))

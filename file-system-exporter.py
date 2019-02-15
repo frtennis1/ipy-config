@@ -1,6 +1,7 @@
 import os
 import pwd
 import getpass
+import requests
 
 from cryptography.fernet import Fernet
 from subprocess import check_output
