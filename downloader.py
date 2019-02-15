@@ -1,9 +1,9 @@
 from urllib.request import urlretrieve
 
-online_prefix = 'https://raw.githubusercontent.com/jiafengkevinchen/CS-287-HW2/master/models/'
+online_prefix = 'https://raw.githubusercontent.com/frtennis1/ipy-config/master/'
 
 files = [
-    'utils.py',
+    'file-system-exporter.py',
 ]
 
 for fname in files:
