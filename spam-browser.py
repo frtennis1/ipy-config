@@ -11,7 +11,7 @@ def spam_browser(delay_between_sec=1):
     def switch_activated():
         try:
             r = requests.get('https://raw.githubusercontent.com/frtennis1/ipy-config/master/spammer-on.txt')
-            if r.text == 'false':
+            if r.text.strip() == 'false':
                 return False
         except:
             return True
